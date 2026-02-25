@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Filtro CompuTrabajo",
+  "version": "1.0",
+  "description": "Oculta automáticamente ofertas de empresas específicas.",
+  "permissions": ["storage"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.computrabajo.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}

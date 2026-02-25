@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body { width: 300px; font-family: Arial, sans-serif; padding: 10px; }
+        h3 { margin-top: 0; font-size: 16px; }
+        .input-group { display: flex; gap: 5px; margin-bottom: 10px; }
+        input { flex: 1; padding: 5px; }
+        button { padding: 5px 10px; cursor: pointer; background: #007bff; color: white; border: none; border-radius: 3px; font-size: 13px; }
+        ul { list-style: none; padding: 0; margin: 0; max-height: 200px; overflow-y: auto; margin-bottom: 10px; }
+        li { display: flex; justify-content: space-between; padding: 5px; border-bottom: 1px solid #eee; align-items: center; }
+        .btn-delete { background: #dc3545; font-size: 12px; padding: 2px 5px; }
+        
+        /* Estilos para los nuevos botones */
+        .acciones-io { display: flex; gap: 5px; justify-content: space-between; border-top: 1px solid #ddd; padding-top: 10px; }
+        .btn-export { background: #28a745; width: 48%; }
+        .btn-import { background: #6c757d; width: 48%; }
+    </style>
+</head>
+<body>
+    <h3>Filtro de Empresas</h3>
+    
+    <p style="font-size: 13px; color: #555; margin-bottom: 15px;">
+        Total histórico ocultado: <strong id="contadorHistorico">0</strong>
+    </p>
+
+    <div class="input-group">
+        <input type="text" id="empresaInput" placeholder="Ej: Atento Chile">
+        <button id="btnAgregar">Agregar</button>
+    </div>
+    
+    <ul id="listaEmpresas"></ul>
+
+    <div class="acciones-io">
+        <button id="btnExportar" class="btn-export">Exportar .JSON</button>
+        <button id="btnImportar" class="btn-import">Importar .JSON</button>
+        <input type="file" id="fileImportar" accept=".json" style="display: none;">
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
